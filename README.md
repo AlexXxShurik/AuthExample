@@ -50,7 +50,7 @@ Backend-приложение с собственной системой **аут
 
 ### 1. Клонировать репозиторий
 ```bash
-git clone https://github.com/your-username/project.git
+git clone https://github.com/AlexXxShurik/AuthExample
 cd project
 ```
 
