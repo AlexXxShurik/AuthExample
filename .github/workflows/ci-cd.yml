@@ -1,0 +1,43 @@
+name: Deploy Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout backend
+        uses: actions/checkout@v4
+        with:
+          path: 'AuthExample'
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass rsync
+
+      - name: Copy files to server
+        run: |
+          sshpass -p "${{ secrets.PASSWORD }}" rsync -avz \
+            -e "ssh -p ${{ secrets.PORT }} -o StrictHostKeyChecking=no" \
+            ./AuthExample/ \
+            ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/AuthExample
+
+      - name: Deploy application
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            set -e
+            cd /AuthExample
+      
+            docker compose build --no-cache
+            docker compose up -d
+            
+            docker system prune -af --volumes || true

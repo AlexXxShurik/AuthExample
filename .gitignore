@@ -1,0 +1,115 @@
+# Игнорировать файлы и папки операционной системы
+.DS_Store
+Thumbs.db
+
+# Игнорировать папки зависимостей
+private_key.pem
+public_key.pem
+.env
+node_modules/
+venv/
+.venv
+.venv/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Игнорировать логи и временные файлы
+*.log
+*.sqlite3
+*.sqlite
+*.swp
+*.swo
+*.pdf
+
+# Игнорировать настройки IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Игнорировать файлы окружения
+.env.local
+.env.development
+.env.test
+.env.production
+.structure.txt
+deploy.sh
+
+# Игнорировать статику и сборки
+staticfiles/
+media/
+dist/
+build/
+out/
+.next/
+frontend/
+/uploads/*
+!/uploads/.gitkeep
+
+# Игнорировать специфичные для Python файлы
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Игнорировать специфичные для Node.js файлы
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Игнорировать специфичные для фронтенда файлы
+.sass-cache/
+*.css.map
+*.js.map
+*.scss.map
+*.less.map
+*.styl.map
+*.tsbuildinfo
+
+# Игнорировать специфичные для Docker файлы
+docker-compose.override.yml
+.dockerignore
+
+# Игнорировать специфичные для базы данных файлы
+*.db
+*.sql
+*.sqlite
+*.sqlite3
+
+# Игнорировать специфичные для macOS файлы
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Игнорировать специфичные для Windows файлы
+[Tt]humbs.db
+Desktop.ini
+
+# Файл структуры
+get_structure.py
+/structure.txt
